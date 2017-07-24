@@ -1,0 +1,8 @@
+{% if page.og_image %}
+	<meta property="og:image" content="{{ site.cdn.http }}{{ page.og_image }}"/>
+{% else %}
+	<meta property="og:image" content="{{ site.cdn.http }}/photos/bitbucket-w.png"/>
+{% endif %}
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="article:author" content="https://www.facebook.com/kakovskyi"/>

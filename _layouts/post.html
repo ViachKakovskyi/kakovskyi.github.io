@@ -1,0 +1,67 @@
+---
+style: post.scss
+layout: default
+---
+
+<section itemscope itemtype="http://schema.org/BlogPosting">
+
+    {% include microdata.html %}
+
+    <div class="wrapper">
+        <header>
+
+            <h1 itemprop="name headline mainEntityOfPage">{{ page.title }}</h1>
+
+            <ul class="subline">
+                <li>
+                    <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">
+                        {{ page.date | date_to_long_string }}
+                    </time>
+                </li>
+
+                {% if page.location %}
+                    <li class="desktop-only" itemprop="locationCreated">{{ page.location }}</li>
+                {% endif %}
+
+                <li class="unprintable">
+                    <i class="icon icon-comments"></i>
+                    <a href="{{ site.url }}{{ page.url }}#disqus_thread" itemprop="discussionUrl">comments</a>
+                </li>
+            </ul>
+            <div>
+              <ul class="post-tags">
+                {% for tag in page.tags %}
+                 <li>
+                   <a href="/tag/#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>&nbsp;
+                 </li>
+                {% endfor %}
+              </ul>
+          </div>
+            <div class="buttons notranslate desktop-only">
+                <nav class="share">
+
+                    <a href="https://twitter.com/share?url={{ site.url }}{{ page.url }}&amp;text={{ page.title | cgi_escape }}" title="Share on Twitter" rel="nofollow">
+                        <i class="fa fa-twitter notranslate" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/cws/share?url={{ site.url }}{{ page.url }}" title="Share on LinkedIn" rel="nofollow">
+                        <i class="fa fa-linkedin notranslate" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" title="Share on Google+" rel="nofollow">
+                        <i class="fa fa-google-plus notranslate" aria-hidden="true"></i>
+                    </a>
+                    <a href="http://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook" rel="nofollow">
+                        <i class="fa fa-facebook notranslate" aria-hidden="true"></i>
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <article class="main" itemprop="articleBody">
+                {{ content }}
+            </article>
+        </main>
+        {% if jekyll.environment == "production" and page.comments %}
+            {% include disqus.html %}
+        {% endif %}
+    </div>
+</section>

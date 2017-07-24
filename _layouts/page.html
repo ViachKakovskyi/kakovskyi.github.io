@@ -1,0 +1,15 @@
+---
+style: page.scss
+layout: default
+---
+
+<section class="wrapper" itemscope itemtype="http://schema.org/BlogPosting">
+    <header itemprop="name">
+        <h1>{{ page.title }}</h1>
+    </header>
+    <main>
+        <article itemprop="articleBody">
+            {{ content }}
+        </article>
+    </main>
+</section>

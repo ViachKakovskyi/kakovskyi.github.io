@@ -1,0 +1,35 @@
+.buttons {
+    @extend %unprintable;
+    .share {
+        a,
+        a:visited {
+            text-decoration: none;
+        }
+        a {
+            position: relative;
+            .fa {
+                $size: 1.2;
+                border: 1px solid $yellow;
+                border-radius: 50%;
+                color: $yellow;
+                display: inline-block;
+                height: $size * $em;
+                line-height: $size * $em;
+                margin-bottom: .2 * $em;
+                margin-right: .2 * $em;
+                padding: .4 * $size * $em;
+                text-align: center;
+                vertical-align: middle;
+                width: $size * $em;
+                &:hover {
+                    background-color: $yellow;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+nav.share {
+  margin-top: 15px;
+}

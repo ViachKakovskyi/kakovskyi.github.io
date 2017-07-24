@@ -1,0 +1,44 @@
+name: All You Need Is Backend
+title: All You Need Is Backend
+description: Backend Software Engineering and Technical Leadership within distributed teams. From Viach Kakovskyi.
+markdown: kramdown
+url: http://allyouneedisbackend.com
+permalink: /blog/:year/:month/:day/:title/
+
+gems:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+excerpt_separator: <!--more-->
+
+# https://jekyllrb.com/docs/pagination/
+paginate: 10
+paginate_path: "/p/:num/"
+
+# https://github.com/jekyll/jekyll-feed
+feed:
+  title: allyouneedisbackend.com
+  subtitle: Backend Software Engineering Blog
+
+# https://github.com/penibelst/jekyll-compress-html
+compress_html:
+  ignore:
+    envs: [development]
+
+# https://jekyllrb.com/docs/assets/
+sass:
+  style: compressed
+
+cdn:
+  http: "http://d1vt1c82ljabfd.cloudfront.net"
+  https: "https://d1vt1c82ljabfd.cloudfront.net"
+
+twitter:
+  username: allyouneedisbackend
+
+social:
+  name: Viach Kakovskyi
+  links:
+    - https://twitter.com/allyouneedisbackend

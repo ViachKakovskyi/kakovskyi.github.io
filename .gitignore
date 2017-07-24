@@ -1,0 +1,6 @@
+_site/
+.sass-cache/
+.jekyll-metadata
+_hosted/
+allyouneedisbackend.sublime-project
+allyouneedisbackend.sublime-workspace

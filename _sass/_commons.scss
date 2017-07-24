@@ -1,0 +1,112 @@
+%unprintable {
+    @media print {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.unprintable {
+    @extend %unprintable;
+}
+
+%desktop-only {
+    @media all and (max-width: $width) {
+        display: none;
+    }
+}
+
+.desktop-only {
+    @extend %desktop-only;
+}
+
+%gray {
+    color: $gray;
+    a,
+    a:visited {
+        color: inherit;
+    }
+}
+
+.gray {
+    @extend %gray;
+}
+
+%wrapper {
+    box-sizing: border-box;
+    line-height: 1.4 * $em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2 * $em;
+    margin-bottom: 2 * $em;
+    padding-left: 2 * $em;
+    padding-right: 2 * $em;
+    width: $width;
+    @media all and (max-width: $width) {
+        margin-top: 1 * $em;
+        padding-left: $em;
+        padding-right: $em;
+        width: 100%;
+    }
+}
+
+.wrapper {
+    @extend %wrapper;
+}
+
+#subscribe input, #subscribe button, #subscribe textarea {
+  border: 1px solid;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 15px;
+  max-width: 60%;
+}
+
+fieldset#subscribe {
+  border: 0px;
+  padding-left: 0px;
+}
+
+#subscribe button {
+  font-size: 19px;
+  cursor: pointer;
+}
+
+span.logo {
+  padding: 6px;
+}
+
+ul.post-tags {
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+  display: inline-flex;
+}
+
+ul.post-tags li {
+  margin-right: 0px;
+}
+
+a.post-tag {
+  background-color: #EAE6FF;
+  color: #403294 !important;
+  font-family: "Source Code Pro",monospace;
+  font-size: 15.2px;
+  margin-right: 3.8px;
+  padding-top: 3px;
+  padding-right: 10px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+a.post-tag:hover {
+  background-color: #E3FCEF;
+  color: #006644 !important;
+}
+
+.blog-logo {
+  text-decoration: none;
+}

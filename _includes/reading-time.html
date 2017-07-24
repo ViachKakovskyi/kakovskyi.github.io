@@ -1,0 +1,6 @@
+{% assign words = post.content | number_of_words %}
+{% if words < 200 %}
+    1 min read
+{% else %}
+    {{ words | divided_by:200 }} min read
+{% endif %}
