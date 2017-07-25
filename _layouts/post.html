@@ -23,6 +23,17 @@ layout: default
                     <li class="desktop-only" itemprop="locationCreated">{{ page.location }}</li>
                 {% endif %}
 
+                <li itemprop="wordCount">
+                    {{ page.content | number_of_words }} words
+                </li>
+                <li>
+                  {% assign words = page.content | number_of_words %}
+                  {% if words < 200 %}
+                      1 min read
+                  {% else %}
+                      {{ words | divided_by:200 }} min read
+                  {% endif %}
+                </li>
                 <li class="unprintable">
                     <i class="icon icon-comments"></i>
                     <a href="{{ site.url }}{{ page.url }}#disqus_thread" itemprop="discussionUrl">comments</a>

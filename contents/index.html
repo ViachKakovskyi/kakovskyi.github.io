@@ -35,8 +35,15 @@ description: |
              </li>
           {% endfor %}
         </ul>
+        <li itemprop="wordCount">
+            {{ post.content | number_of_words }} words
+        </li>
         <li>
             {% include reading-time.html %}
+        </li>
+        <li>
+            <i class="icon icon-comments"></i>
+            <a href="{{ site.url }}{{ post.url }}#disqus_thread" itemprop="discussionUrl">comments</a>
         </li>
     </ul>
 </div>
