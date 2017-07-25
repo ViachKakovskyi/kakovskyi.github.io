@@ -25,7 +25,7 @@ keywords:
 
 I'm Viach Kakovskyi (Ukrainian: Вячеслав Каковський), a backend software engineer, technical leader of a geo-distributed team, [speaker](/talks){:target="_blank"} and reader :). I live, work and enjoy BBQ in [Austin](https://en.wikipedia.org/wiki/Austin,_Texas){:target="_blank"}, Tech Capital of [The Lone Star State](https://en.wikipedia.org/wiki/Texas){:target="_blank"}.
 
-As a **backend software engineer** I've been focused on the development of [instant messaging](https://en.wikipedia.org/wiki/Instant_messaging){:target="_blank"} software, [ETL](https://en.wikipedia.org/wiki/Extract,_transform,_load){:target="_blank"} data services, [Near-Real Time](https://en.wikipedia.org/wiki/Real-time_computing#Near_real-time){:target="_blank"} embedded system for road traffic analysis, network applications for [CCTV](https://en.wikipedia.org/wiki/Closed-circuit_television){:target="_blank"} video systems. Far ago and long away I was working on [e-commerce](https://en.wikipedia.org/wiki/E-commerce){:target="_blank"} solutions as a full-stack web developer.
+As a **backend software engineer**, I've been focused on the development of [instant messaging](https://en.wikipedia.org/wiki/Instant_messaging){:target="_blank"} software, [ETL](https://en.wikipedia.org/wiki/Extract,_transform,_load){:target="_blank"} data services, [Near-Real Time](https://en.wikipedia.org/wiki/Real-time_computing#Near_real-time){:target="_blank"} embedded system for road traffic analysis, network applications for [CCTV](https://en.wikipedia.org/wiki/Closed-circuit_television){:target="_blank"} video systems. Far ago and long away I was working on [e-commerce](https://en.wikipedia.org/wiki/E-commerce){:target="_blank"} solutions as a full-stack web developer.
 
 Today Python is the main programming language for me. I also have a bit of commercial production experience using Java, Ruby, PHP, Perl, and JavaScript.
 
@@ -59,7 +59,7 @@ Other areas of my professional interest are:
 - performance optimizations
 - technical mentoring
 
-Therefore, in the blog you should expect posts on the topics described above.
+Therefore, in the blog, you should expect posts on the topics described above.
 
 
 I send **monthly summaries** with my findings of backend software engineering. I can add you to my mailing list if you wish. Let me know which things about backend engineering are the most exciting for you.

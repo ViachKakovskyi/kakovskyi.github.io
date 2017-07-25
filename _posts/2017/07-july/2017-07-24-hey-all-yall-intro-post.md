@@ -29,7 +29,7 @@ Well, what's the word "backend" about? It has numerous meanings for different pe
 - Data access layer of an application
 - Database, server-side framework, server, and operating system
 - Software which runs on the LAMP stack - Linux, Apache, MySQL, and PHP
-- Cloud services (we will talk sometimes what's "cloud", okay?)
+- Cloud services (we will talk sometimes what's _cloud_, okay?)
 - Code is written in scripting languages like Python, Ruby, Perl, PHP
 - Everything a user can't see in the browser
 - Just anything except frontend even might include hardware
@@ -47,7 +47,7 @@ From my perspective, it includes, but not limited to:
 - Data processing services
 - Software for testing other software
 - Infrastructure for software deployment and monitoring
-- Cloud services (someday I will share my definition of cloud, right?)
+- Cloud services (someday I will share my definition of _cloud_, right?)
 
 And I expect to add more things to the list over the years. Stay tuned.
 
