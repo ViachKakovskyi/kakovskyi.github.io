@@ -16,6 +16,7 @@ excerpt_separator: <!--more-->
 # https://jekyllrb.com/docs/pagination/
 paginate: 10
 paginate_path: "/p/:num/"
+future: true
 
 # https://github.com/jekyll/jekyll-feed
 feed:
