@@ -10,12 +10,15 @@ keywords:
   - backend engineering conferences
   - talks about backend development
   - programming meetups
+  - backend talks
+  - backend engineering talks
+  - viach kakovskyi talks
 ---
 
 <amp-img
     media="(min-width: 600px)"
     src="{{ site.cdn.http }}/photos/pyconua.png"
-    alt="viach-bitbucket"
+    alt="Speaking at PyCon Ukraine 2016"
     class="image-right"
     height="386"
     width="300"
@@ -23,12 +26,12 @@ keywords:
 </amp-img>
 
 
-I enjoy knowledge sharing and technical conferences. Sometimes I give my own talks about the techniques which we apply in the production environment. For instance, I did talks at PyCon Ukraine, PyCon Poland, WebCamp Ukraine and other local meetups like Austin Python Meetup and Kyiv Python Meetup.
+I enjoy knowledge sharing and technical conferences. Sometimes I give my talks about the techniques which we apply in the production environment. For instance, I did talks at PyCon Ukraine, PyCon Poland, WebCamp Ukraine and other local meetups like Austin Python Meetup and Kyiv Python Meetup.
 
 <amp-img
     media="(max-width: 599px)"
     src="{{ site.cdn.http }}/photos/pyconua-hor.png"
-    alt="viach-bitbucket"
+    alt="Speaking at PyCon Ukraine 2016"
     width="480"
     height="350"
     layout="responsive">
@@ -68,7 +71,7 @@ List of the talks which I made:
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/25kRqy1dnpMm8G" width="595" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 
 <p>
-We delivered one more Python 3 project to production and I decided to share my thoughts about starting a new commercial one inside a company. The topic was really HOT for members of <a href="https://www.meetup.com/austinpython/" target="_blank">Austin Python community</a>.
+We delivered one more Python 3 project to production, and I decided to share my thoughts about starting a new commercial one inside a company. The topic was really HOT for members of <a href="https://www.meetup.com/austinpython/" target="_blank">Austin Python community</a>.
 </p>
 <p>I told the story how I started using Python 3 instead of Python 2 at work. We discussed the reasons to use Python 3 over Python 2. Also, we talked how to negotiate a switch to Python 3 with a development manager.  
 </p>
@@ -131,7 +134,7 @@ Life of a messaging platform
 <p>
 </p>
 <p>
-I wanna note that never been in Odessa before and definitely liked the city. Looking forward to visiting it again.
+I wanna note that never been in Odessa before and liked the city. Looking forward to visiting it again.
 </p>
 
 </div>
@@ -141,9 +144,9 @@ I wanna note that never been in Odessa before and definitely liked the city. Loo
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/usNXqcQbUW1tQv" width="595" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 
 <p>
-This talk was for <strong>the largest Ukrainian Python conference</strong> - <a href="http://ua.pycon.org" target="_blank">PyCon Ukraine</a>. You can <strong><a href="https://youtu.be/2qBb8n9AdaI?t=17267" target="_blank">watch the recording</a></strong> in the Ukrainian language (44 mins). I've been on the conference back before in 2014 and I knew that the audience expects interesting content and well-prepared speakers. I did the intro for maintaining high load Python projects 100%-based on my own production commercial experience. </p>
+This talk was for <strong>the largest Ukrainian Python conference</strong> - <a href="http://ua.pycon.org" target="_blank">PyCon Ukraine</a>. You can <strong><a href="https://youtu.be/2qBb8n9AdaI?t=17267" target="_blank">watch the recording</a></strong> in the Ukrainian language (44 mins). I've been on the conference back before in 2014, and I knew that the audience expects thought-provoking content and well-prepared speakers. I did the intro for maintaining high load Python projects 100%-based on my own production commercial experience. </p>
 
-<p>From another side, I used my pet-project <a href="http://results2016.kpidata.org" target="_blank">KPIdata</a> as the example for the case study: <strong>show last 5 feedbacks for a university course</strong>. The talk covered usage of the following technologies:
+<p>From another side, I used my pet-project <a href="http://results2016.kpidata.org" target="_blank">KPIdata</a> as the example for the case study: <strong>show last five feedbacks for a university course</strong>. The talk covered usage of the following technologies:
 <ul>
 <li>full-text search indices
 </li>
@@ -181,7 +184,7 @@ As well as I did in my production cases, I used <a href="https://deap.readthedoc
 
 <amp-img
     src="{{ site.cdn.http }}/photos/webcamp-2016-2.jpg"
-    alt="viach-bitbucket"
+    alt="Sharing knowledge at WebCamp Ukraine 2016"
     width="2048"
     height="1367"
     layout="responsive">

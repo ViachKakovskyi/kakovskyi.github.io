@@ -7,6 +7,13 @@ description: |
   Texas style introductory post for backend software engineering blog. From Viach Kakovskyi.
 comments: true
 tags: [blogging]
+keywords:
+  - backend blog
+  - viach kakovskyi
+  - texas programming blog
+  - introductory post
+  - what is backend
+  - backend software engineer
 ---
 
 From the beginning of the 2017 year, I was thinking about starting a blog. I had a few options for the main subject:
@@ -14,7 +21,7 @@ From the beginning of the 2017 year, I was thinking about starting a blog. I had
 - Burrito
 - Backend
 
-Since I love all these things it was not the easy decision for me and it took half of the year to make it.
+Since I love all these things, it was not the easy decision for me, and it took half of the year to make it.
 <!--more-->
 Tasting BBQ and Tex-Mex cuisine in _the best places in Texas_ convinced me to do not intervene into the competitive businesses. I will just continue consuming the delicious and not-always-healthy food.
 
@@ -29,7 +36,7 @@ Well, what's the word "backend" about? It has numerous meanings for different pe
 - Data access layer of an application
 - Database, server-side framework, server, and operating system
 - Software which runs on the LAMP stack - Linux, Apache, MySQL, and PHP
-- Cloud services (we will talk sometimes what's _cloud_, okay?)
+- Cloud services (we will sometimes talk  what's _cloud_, okay?)
 - Code is written in scripting languages like Python, Ruby, Perl, PHP
 - Everything a user can't see in the browser
 - Just anything except frontend even might include hardware
@@ -54,13 +61,13 @@ And I expect to add more things to the list over the years. Stay tuned.
 What's the blog about?
 -
 
-The [Howdy](/about-me/){:target="_blank"} page claims that I'm a backend software engineer, technical leader of a geo-distributed team, [speaker](/talks){:target="_blank"} and reader. I do the things and I yearn to do it better.
+The [Howdy](/about-me/){:target="_blank"} page claims that I'm a backend software engineer, technical leader of a geo-distributed team, [speaker](/talks){:target="_blank"} and reader. I do the things, and I yearn to do it better.
 
 I believe that blogging will help me to organize my thoughts and accelerate learning. Also, I assume that my experience in backend software engineering might be useful for other members of the community and as a consequence will lead to interesting discussions.
 
 In the blog you can expect to read:
 - Thoughts about the approaches which we apply at work with my team. We're involved in the development of instant messaging software. I'm passionate about that.
-- Introductory posts about the backend technologies which I learn and plan to use in the future. I will do my best to make them enough practical for y'all. With examples.
+- Introductory posts about the backend technologies which I learn and plan to use in the future. I will do my best to make them practical enough for y'all. With examples.
 - Reviews of the events which I attend and occasionally speak for.
 - Abstracts of my technical talks.
 - Reviews of the books about computers which I read and found alluring. With spoilers :)
@@ -70,7 +77,7 @@ The target audience for the blog is:
 - Backend software engineers
 - Software engineers interested in improving backend skills
 - Engineers which tend to lead small or mid-size teams
-- Any person which interested in learning about Backend. Or burrito. Or BBQ.
+- Any person who interested in learning about Backend. Or burrito. Or BBQ.
 
 I plan to write at least a post per week and send monthly updates. Don't forget to **[subscribe](/about-me#subscribe){:target="_blank"}** to my mailing list.
 
@@ -80,4 +87,4 @@ How does the blog work?
 This is a static one built with Jekyll and hosted at GitHub Pages.
 I appreciate **[Yegor Bugayenko](https://github.com/yegor256/blog){:target="_blank"}** and **[Juliano Boesel Mohr](https://github.com/juliaaano/juliaaano/){:target="_blank"}** for providing the great examples.
 
-Okay, guys, let's start our first discussion. What's your own definition of **backend**?
+Okay, guys, let's start our first discussion. What's your definition of **backend**?
