@@ -84,6 +84,10 @@ ul.post-tags {
   display: inline-flex;
 }
 
+ul.post-tags-inline {
+  display: block !important;
+}
+
 ul.post-tags li {
   margin-right: 0px;
 }
@@ -109,4 +113,20 @@ a.post-tag:hover {
 
 .blog-logo {
   text-decoration: none;
+}
+
+hr {
+  margin-left: 10em;
+  margin-right: 10em;
+  border-color: #EAE6FF;
+}
+
+blockquote {
+  border-left: 4px solid #c0b8ea;
+  color: #6956cd;
+  padding-left: 18px;
+}
+
+.image-wrapper img , .image-wrapper  amp-img{
+  float: right;  
 }

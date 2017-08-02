@@ -40,11 +40,9 @@ layout: default
                 </li>
             </ul>
             <div>
-              <ul class="post-tags">
+              <ul class="post-tags post-tags-inline">
                 {% for tag in page.tags %}
-                 <li>
                    <a href="/tag/#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>&nbsp;
-                 </li>
                 {% endfor %}
               </ul>
           </div>

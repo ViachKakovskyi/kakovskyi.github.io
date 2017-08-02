@@ -1,12 +1,13 @@
 ---
 title: "Scaling MongoDB by Kristina Chodorow"
 layout: post
-date: 2017-08-03
+date: 2017-08-06
 location: Austin, Texas
 description: |
  Reading notes and book review of "Scaling MongoDB". The short book is about sharding and spinning a robust MongoDB cluster.
 comments: true
 tags: [reading notes, distributed, database, mongodb]
+og_image: /images/scaling-mongodb-book-cover.jpg
 keywords:
   - sharding mongodb
   - scaling mongodb
@@ -14,13 +15,28 @@ keywords:
   - mongodb shard key
   - book review
 ---
-<a href="http://shop.oreilly.com/product/0636920018308.do" target="_blank">
-<img
+
+<!-- <img
 src="{{ site.cdn.http }}/images/scaling-mongodb-book-cover.jpg"
 width="200"
 style="float: right; padding-left: 1em; padding-bottom: 1em; padding-top: 0.5em;"
-alt="Scaling MongoDB. Book cover"/></a>
+alt="Scaling MongoDB. Book cover"/>
+</a> -->
 <!-- class="image-right" -->
+
+<div class="image-wrapper">
+<a href="http://shop.oreilly.com/product/0636920018308.do" target="_blank">
+  <amp-img
+      media="(min-width: 550px)"
+      src="{{ site.cdn.http }}/images/scaling-mongodb-book-cover.jpg"
+      alt="Scaling MongoDB. Book cover"
+      class="image-right"
+      width="250"
+      height="345"
+      layout="fixed">
+  </amp-img>
+  </a>
+</div>
 
 
 A single-server database can be only in 2 states: up and down. But [Mongo DB Is Web Scale](http://www.mongodb-is-web-scale.com/){:target="_blank"}, right? :)
