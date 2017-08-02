@@ -100,7 +100,7 @@ That's my list of harmful advice for picking a technology for a commercial proje
 
 But from educational or personal projects perspective the 75% of the advice is helpful :)
 
-**Do you recognize yourself or your teammates following some the advice at work?**
+**Do you recognize yourself or your teammates following some of the advice at work?**
 
 
 **What's your harmful advice for choosing a technology?**
