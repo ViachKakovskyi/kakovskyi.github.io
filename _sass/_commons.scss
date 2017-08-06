@@ -127,6 +127,11 @@ blockquote {
   padding-left: 18px;
 }
 
-.image-wrapper img , .image-wrapper  amp-img{
-  float: right;  
+
+div[itemprop="description"] .image-wrapper img , div[itemprop="description"] .image-wrapper amp-img{
+  float: right;
+}
+
+div[itemprop="description"] .image-right {
+    margin-left: 10px;
 }

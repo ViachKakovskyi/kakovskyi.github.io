@@ -39,7 +39,7 @@ alt="Scaling MongoDB. Book cover"/>
 </div>
 
 
-A single-server database can be only in 2 states: up and down. But [Mongo DB Is Web Scale](http://www.mongodb-is-web-scale.com/){:target="_blank"}, right? :)
+A single-server database can be only in 2 states: up or down. But [Mongo DB Is Web Scale](http://www.mongodb-is-web-scale.com/){:target="_blank"}, right? :)
 
 When my wife found [the book](http://shop.oreilly.com/product/0636920018308.do){:target="_blank"} in our city library, she offered me to read it because I'm interested in learning and using various data stores. And the book is 50ish pages so why not read it in a couple of hours?
 

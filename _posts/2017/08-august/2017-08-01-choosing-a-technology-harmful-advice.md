@@ -12,8 +12,10 @@ keywords:
   - how to choose a technology for software
   - technical leadership
   - choose software technology
+  - choosing a technology
   - commercial project
   - harmful advice
+  - bad advice
 ---
 
 <div class="image-wrapper">
