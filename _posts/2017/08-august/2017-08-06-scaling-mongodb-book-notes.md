@@ -16,14 +16,6 @@ keywords:
   - book review
 ---
 
-<!-- <img
-src="{{ site.cdn.http }}/images/scaling-mongodb-book-cover.jpg"
-width="200"
-style="float: right; padding-left: 1em; padding-bottom: 1em; padding-top: 0.5em;"
-alt="Scaling MongoDB. Book cover"/>
-</a> -->
-<!-- class="image-right" -->
-
 <div class="image-wrapper">
 <a href="http://shop.oreilly.com/product/0636920018308.do" target="_blank">
   <amp-img
@@ -73,7 +65,7 @@ As the consequences of the goals, a MongoDB cluster should be easy to use and ad
 MongoDB cluster consists of the following components:
 
 - `mongos` - a router, entry point for all queries.
-- Shards with data
+- Shards with data.
 - Cluster config servers.
 
 Each element is a process and does not require a dedicated machine.
@@ -140,4 +132,6 @@ The idea which worth investigation: using a queue for controlling access to the 
 
 _P.S. The book was published in early 2011, and my review might have some outdated information. Let me know in comments, and I will fix that._
 
-What's your own experience of scaling MongoDB?
+**What's your own experience of scaling MongoDB? **
+
+**How do you shard your databases?**
