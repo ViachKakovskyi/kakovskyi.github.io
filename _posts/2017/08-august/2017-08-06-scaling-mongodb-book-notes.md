@@ -132,6 +132,6 @@ The idea which worth investigation: using a queue for controlling access to the 
 
 _P.S. The book was published in early 2011, and my review might have some outdated information. Let me know in comments, and I will fix that._
 
-**What's your own experience of scaling MongoDB? **
+**What's your own experience of scaling MongoDB?**
 
 **How do you shard your databases?**
