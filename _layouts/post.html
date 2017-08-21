@@ -28,10 +28,10 @@ layout: default
                 </li>
                 <li>
                   {% assign words = page.content | number_of_words %}
-                  {% if words < 200 %}
+                  {% if words < 240 %}
                       1 min read
                   {% else %}
-                      {{ words | divided_by:200 }} min read
+                      {{ words | divided_by:240 }} min read
                   {% endif %}
                 </li>
                 <li class="unprintable">
