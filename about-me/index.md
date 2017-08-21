@@ -75,7 +75,7 @@ I send **monthly summaries** with my findings of backend software engineering. I
     <label for="preferences">
       What topics are interesting for you?
     </label>
-    <textarea name="message" cols="45" rows="5" required="required"></textarea>
+    <textarea name="message" cols="45" rows="5"></textarea>
     <input type="hidden" name="_next" value="/thanks" />
     <input type="hidden" name="_subject" value="Hey, All You Need Is Backend!" />
     <input type="text" name="_gotcha" style="display:none" />
