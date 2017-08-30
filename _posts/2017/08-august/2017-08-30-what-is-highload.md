@@ -86,7 +86,7 @@ This definition does not make a lot of sense for me. What about on-premise solut
 Well, Viach, what's Highload?
 ------
 
-As you probably noted, all the listed definitions and tons of others did not satisfy me completely. I envisioned all the experience which I had, stuff which I read to make this statement.
+As you probably noted, all the listed definitions and tons of others did not satisfy me completely. I envisioned all the experience which I had to make this statement.
 
 > ## What is a highload project?
 > #### A project when an inefficient solution or a tiny bug has a huge impact on your business. The mistake leads to increase of cost **$$$** or loss of company's reputation.
