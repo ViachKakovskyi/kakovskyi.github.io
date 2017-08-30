@@ -184,7 +184,7 @@ Possible options what the function means:
 
 * The function should return *multiplication of 2 integers*. In this instance, docstring should be fixed: description of the function, type of the first parameter and description of returned value.
 * The function should return *sum of 2 integers*. Function name should be `sum` and code has a typo: `*` must be replaced with `+`.  
-* The function should return *string repeated several times*. In that case docstring should be improved: description of function and type/description of returned value.
+* The function should return *string repeated several times*. In that case, docstring should be improved: description of function and type/description of returned value.
 
 Any docstring which is outdated or not actual leads to a problem with maintaining your code.
 
@@ -298,7 +298,7 @@ This blog is about backend software engineering, but sometimes we need to modify
 **Bad.** *Description of pull request with UX does not have any difference from a backend-only one.*
 I personally do not like this approach, because it's not obvious what's changed. But in the teams which make UX changes on daily basis, it might be okay.
 
-**Good.** *A PR is has a screenshot attached.* If we have only one screenshot, it usually shows the new state of UX.
+**Good.** *A PR has a screenshot attached.* If we have only one screenshot, it usually shows the new state of UX.
 
 **Awesome.** *Pull Request has images which show the UX both before and after*. I think that it's fine to be a bit verbose. If I were your teammate I would be thankful for that. Note, that UX changes may occur not only when you edit HTML or CSS directly.
 
