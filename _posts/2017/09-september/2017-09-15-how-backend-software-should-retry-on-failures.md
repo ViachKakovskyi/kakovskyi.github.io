@@ -32,9 +32,9 @@ If you're working on a network application - it's even more complicated: your da
 
 Some things can go wrong: a network blip might happen, the remote database can be overloaded by incoming requests, a query can reveal some bug in the DBMS and crash it, your data can be out of order on that side because of some reason, and so on.
 
-Microservice architecture encourages cross-process communications over the network. Now your service asks another one for its configuration, that is stored somewhere in the database. You should prepare the software to non-deterministic failures which might occur during the data transfer. And not only then.
+Microservice architecture encourages cross-process communications over the network. Now your service asks another one for its configuration, that is stored somewhere in the database. You should prepare the software to non-deterministic failures that might occur during the data transfer. And not only then.
 
-In the blog post, we will look into some common failures which can be solved with proper retrying. The basic ideas are described using Python, but experience with the language is not required for understanding.
+In the blog post, we will look into some common failures that can be solved with proper retrying. The basic ideas are described using Python, but experience with the language is not required for understanding.
 
 <!--more-->
 
@@ -43,17 +43,17 @@ In the blog post, we will look into some common failures which can be solved wit
 Failures When Retry Might Help
 -----
 
-Retry helps in the places when our code acts as a client of some other backend. It can be a wrapper for a database client, a client for an HTTP server, etc. As a consumer, we expect (sometimes without any reason) that the problem which prevents successful processing can be fixed by someone else shortly.
+Retry helps in the places when our code acts as a client of some other backend. It can be a wrapper for a database client, a client for an HTTP server, etc. As a consumer, we expect (sometimes without any reason) that the problem that prevents successful processing can be fixed by someone else shortly.
 
 I can name two categories of problems when I look for that:
 * errors during data transfer
 * failures of processing because of load issues
 
-In **the first one**, our request even does not reach the eventual endpoint - application code which handles your query on the other side. Possible reasons from my experience can be various:
+In **the first one**, our request even does not reach the eventual endpoint - application code that handles your query on the other side. Possible reasons from my experience can be various:
 
 * `DNSError` - domain name cannot be resolved into IP. It does not always mean that the system is not available. It might happen when your destination is being redeployed.
 * `ConnectionError` - we failed to perform a connection handshake successfully. The connection might be not stable on the network level at the moment of making the request.
-* `Timeout` - a server fails to send a byte after the specified timeout, but the connection was previously established. Some previous requests can be even processed successfully using the instance of your `HTTPClient`. The error may occur when the infrastructure of your destination scaled down, and the particular server which you used does not exist now. But service is available. You need to recreate `HTTPClient` and try to establish a new connection.
+* `Timeout` - a server fails to send a byte after the specified timeout, but the connection was previously established. Some previous requests can be even processed successfully using the instance of your `HTTPClient`. The error may occur when the infrastructure of your destination scaled down, and the particular server that you used does not exist now. But service is available. You need to recreate `HTTPClient` and try to establish a new connection.
 
 Some common database issue from the same group:
 * `OperationalError` - the errors occur when connection to storage is lost or cannot be established at the moment. I think that it worth to recreate an instance of the client and try to connect again in such cases. You can see the examples of error codes returned by PostgreSQL:
@@ -65,20 +65,20 @@ Class 08 — Connection Exception
 08001	sqlclient_unable_to_establish_sqlconnection
 08004	sqlserver_rejected_establishment_of_sqlconnection
 ```
-* `ProtocolError` is an example from Redis. The exception is raised when Redis server received a sequence of bytes which is translated to a meaningless operation. Since you test your software before deploying that, it's unlikely that the error occurs because of poorly written code. Let's blame our transport layer :).
+* `ProtocolError` is an example from Redis. The exception is raised when Redis server received a sequence of bytes that is translated to a meaningless operation. Since you test your software before deploying that, it's unlikely that the error occurs because of poorly written code. Let's blame our transport layer :).
 
 Thinking about the 2nd category of failures aka **load issues** I'd like to review the following responses from HTTP server:
 * `408 Request Timeout` is returned when a server spent more time processing your request than it was prepared to wait. Possible reason: a resource is overwhelmed by a lot of incoming requests. Waiting and retrying after some delay can be a good strategy to finish data processing on your side eventually.
-* `429 Too Many Requests` means that you sent more requests than the server allows you during some time frame. This technique which is used by the server is also known as rate-limiting. A good thing, that a server SHOULD return `Retry-After` header which provides a recommendation how long you need to wait before making the next request.
-* `500 Internal Server Error`. That's the most infamous HTTP server error. The diversity of reasons for the error depends only on the good faith of the developers. For all uncaught exception occurred there the response is returned. I do not have a strong opinion that we should continuously retry on such errors. For each service which you use you should learn what's the reason behind the response.
-> For the developers of web servers which are reading the lines, I suggest preventing sending of the type of response if possible. Think about using more specific response when you know the reason of failure.
+* `429 Too Many Requests` means that you sent more requests than the server allows you during some time frame. This technique that is used by the server is also known as rate-limiting. A good thing, that a server SHOULD return `Retry-After` header that provides a recommendation how long you need to wait before making the next request.
+* `500 Internal Server Error`. That's the most infamous HTTP server error. The diversity of reasons for the error depends only on the good faith of the developers. For all uncaught exception occurred there the response is returned. I do not have a strong opinion that we should continuously retry on such errors. For each service that you use you should learn what's the reason behind the response.
+> For the developers of web servers that are reading the lines, I suggest preventing sending of the type of response if possible. Think about using more specific response when you know the reason of failure.
 * `503 Service Unavailable` - service currently cannot handle the request because of *temporary* overload. You can expect that it will be alleviated after some delay. The server CAN send `Retry-After` header like it was mentioned for `429 Too Many Requests` status code.
-* `504 Gateway Timeout` is similar to `408 Request Timeout` but means that connection with your HTTP client was closed by the reverse-proxy which stands in front of the server.
+* `504 Gateway Timeout` is similar to `408 Request Timeout` but means that connection with your HTTP client was closed by the reverse-proxy that stands in front of the server.
 
 But, hopefully, we do not live in the world where everything is transmitted over HTTP protocol. I want to share my experience of retrying on database errors:
 
-* `OperationalError`. Yes, we already met this guy in the blog post. Both for PostgreSQL and MySQL it additionally covers the failures which are not under control of a software engineer. Examples: a memory allocation error occurred during processing, or a transaction could not be processed. I recommend retrying on them.
-* `IntegrityError` - this is a tricky one. It can be raised when a foreign key constraint is violated, like when you try to insert a `Record A` which depends on `Record B`. And `Record B` might be not added yet because of asynchronous nature of your system. In this case, I'd retry. From another side, the exception is also raised when your attempt to add a record leads to duplication of the unique key. It's unlikely that we want to retry that time. You might ask me how to distinguish such cases and retry when it's needed. Hopefully, your DBMS returns code of the error. And your SQL driver already knows how to map them between exception classes. Here's the example for MySQL:
+* `OperationalError`. Yes, we already met this guy in the blog post. Both for PostgreSQL and MySQL it additionally covers the failures that are not under control of a software engineer. Examples: a memory allocation error occurred during processing, or a transaction could not be processed. I recommend retrying on them.
+* `IntegrityError` - this is a tricky one. It can be raised when a foreign key constraint is violated, like when you try to insert a `Record A` that depends on `Record B`. And `Record B` might be not added yet because of asynchronous nature of your system. In this case, I'd retry. From another side, the exception is also raised when your attempt to add a record leads to duplication of the unique key. It's unlikely that we want to retry that time. You might ask me how to distinguish such cases and retry when it's needed. Hopefully, your DBMS returns code of the error. And your SQL driver already knows how to map them between exception classes. Here's the example for MySQL:
 
 ~~~~~~
 # from pymysql.err
@@ -231,7 +231,7 @@ Not using Python on your backend? At least JavaScript, Go and Java have [open-so
 Summary
 ----
 
-The product that you build does not depend only on the software which you write. You need to rely on external resources like databases or other services which perform some good things for your customers.
+The product that you build does not depend only on the software that you write. You need to rely on external resources like databases or other services that perform some good things for your customers.
 > Backend programming is about making a wrapper of calls to the software built by somebody else.
 
 From my experience, I/O operations are the most vulnerable places for all kinds of random failures. In the blog post, I shared with you my recommendations when and why we should retry. But I would like to know:
