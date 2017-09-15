@@ -3,8 +3,8 @@ title: "Never Give Up, Retry: How Software Should Deal with Failures"
 layout: post
 date: 2017-09-15
 location: Austin, Texas
-description: |
- The services which your software uses are never 100% available. Let's look how to deal with that.
+description:
+ The services that your software uses are never 100% available. Let's look how to deal with that.
 comments: true
 tags: [reliability, http, python, distributed]
 og_image: /images/never-give-up-retry.png
@@ -32,7 +32,7 @@ If you're working on a network application - it's even more complicated: your da
 
 Some things can go wrong: a network blip might happen, the remote database can be overloaded by incoming requests, a query can reveal some bug in the DBMS and crash it, your data can be out of order on that side because of some reason, and so on.
 
-Microservice architecture encourages cross-process communications over the network. Now your service asks another one for its configuration, which is stored somewhere in the database. You should prepare the software to non-deterministic failures which might occur during the data transfer. And not only then.
+Microservice architecture encourages cross-process communications over the network. Now your service asks another one for its configuration, that is stored somewhere in the database. You should prepare the software to non-deterministic failures which might occur during the data transfer. And not only then.
 
 In the blog post, we will look into some common failures which can be solved with proper retrying. The basic ideas are described using Python, but experience with the language is not required for understanding.
 
@@ -71,7 +71,7 @@ Thinking about the 2nd category of failures aka **load issues** I'd like to revi
 * `408 Request Timeout` is returned when a server spent more time processing your request than it was prepared to wait. Possible reason: a resource is overwhelmed by a lot of incoming requests. Waiting and retrying after some delay can be a good strategy to finish data processing on your side eventually.
 * `429 Too Many Requests` means that you sent more requests than the server allows you during some time frame. This technique which is used by the server is also known as rate-limiting. A good thing, that a server SHOULD return `Retry-After` header which provides a recommendation how long you need to wait before making the next request.
 * `500 Internal Server Error`. That's the most infamous HTTP server error. The diversity of reasons for the error depends only on the good faith of the developers. For all uncaught exception occurred there the response is returned. I do not have a strong opinion that we should continuously retry on such errors. For each service which you use you should learn what's the reason behind the response.
-> For the developers of web servers which are reading the lines, I suggest to prevent sending of the type of response if possible. Think about using more specific response when you know the reason of failure.
+> For the developers of web servers which are reading the lines, I suggest preventing sending of the type of response if possible. Think about using more specific response when you know the reason of failure.
 * `503 Service Unavailable` - service currently cannot handle the request because of *temporary* overload. You can expect that it will be alleviated after some delay. The server CAN send `Retry-After` header like it was mentioned for `429 Too Many Requests` status code.
 * `504 Gateway Timeout` is similar to `408 Request Timeout` but means that connection with your HTTP client was closed by the reverse-proxy which stands in front of the server.
 
@@ -145,7 +145,7 @@ async def fetch(session, url):
 ~~~~~~
 {: .language-python}
 
-Now the function does not give up when the specified exceptions occur. It tries to perform a request several. This easy trick can make your software more reliable and remove various sliding bugs. Let's look how the naive implementation works under the hood:
+Now the function does not give up when the specified exceptions occur. It tries to perform a request several times. This easy trick can make your software more reliable and remove various sliding bugs. Let's look how the naive implementation works under the hood:
 
 ~~~~~~
 import logging
@@ -208,7 +208,7 @@ In the example above we have a minimum number of settings to configure:
 * the time between attempts
 * verbosity for logging unsuccessful attempts
 
-Sometimes it's enough. But I know cases when you need more features. Pick the ones which look sexy for you from the list of possible capabilities:
+Sometimes it's enough. But I know cases when you need more features. Pick the ones that look sexy for you from the list of possible capabilities:
 * retry on synchronous functions
 * stopping after some timeout, regardless of the number of attempts
 * wait random time within some boundaries between retries
@@ -231,7 +231,7 @@ Not using Python on your backend? At least JavaScript, Go and Java have [open-so
 Summary
 ----
 
-The product which you build does not depend only on the software which you write. You need to rely on external resources like databases or other services which perform some good things for your customers.
+The product that you build does not depend only on the software which you write. You need to rely on external resources like databases or other services which perform some good things for your customers.
 > Backend programming is about making a wrapper of calls to the software built by somebody else.
 
 From my experience, I/O operations are the most vulnerable places for all kinds of random failures. In the blog post, I shared with you my recommendations when and why we should retry. But I would like to know:
