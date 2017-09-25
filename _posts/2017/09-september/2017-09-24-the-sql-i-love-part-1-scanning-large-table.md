@@ -1,5 +1,5 @@
 ---
-title: "The SQL I Love <3. Chapter One"
+title: "The SQL I Love <3. Efficient pagination a table with 100M records"
 layout: post
 date: 2017-09-24
 location: Austin, Texas
