@@ -197,7 +197,7 @@ In the next chapter, we will pay attention to data aggregation and storage optim
 
 **What's your method of scanning large tables?**
 
-**Do you remember any other purpose of using offset on the primary key?**
+**Do you remember any other purpose of using keyset pagination like in Solution #3?**
 
 <a href="http://use-the-index-luke.com/no-offset">
    <img src="http://use-the-index-luke.com/static/no-offset-banner-468x60.white.-ImIEcEh.png" width="468" height="60"
