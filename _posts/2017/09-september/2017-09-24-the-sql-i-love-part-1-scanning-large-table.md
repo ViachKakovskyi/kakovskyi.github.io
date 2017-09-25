@@ -199,7 +199,7 @@ In the next chapter, we will pay attention to data aggregation and storage optim
 
 **Do you remember any other purpose of using keyset pagination like in Solution #3?**
 
-<a href="http://use-the-index-luke.com/no-offset">
+<a href="http://use-the-index-luke.com/no-offset" target="_blank">
    <img src="http://use-the-index-luke.com/static/no-offset-banner-468x60.white.-ImIEcEh.png" width="468" height="60"
         alt="Do not use OFFSET for pagination"
    />
