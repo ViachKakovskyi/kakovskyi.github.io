@@ -31,7 +31,7 @@ I am a huge fan of databases. I even wanted to make my own DBMS when I was in un
 
 In the series of blog posts **The SQL I Love <3** I walk you thru some problems solved with SQL which I found particularly interesting. The solutions are tested using a table with more than 100 million records.  All the examples use MySQL, but ideas apply to other relational data stores like PostgreSQL, Oracle and SQL Server.
 
-This Chapter is focused on efficient scanning a large table using pagination with `offset` on the primary key.
+This Chapter is focused on efficient scanning a large table using pagination with `offset` on the primary key. This is also known as **keyset pagination**.
 
  <!--more-->
 
@@ -172,7 +172,7 @@ For further learning, I recommend investigating results of `EXPLAIN EXTENDED` fo
 | -------------- |--| ----------|
 | 1. Obvious      | Never | ALL | NULL | 100M | 100.00 | NULL
 | 2. Paging using number of records as  offset   | 40.81 sec      |   index | NULL / PRIMARY | 50M | 200.00 | NULL
-| 3. Paging using user_id as offset | 0.03 sec      | range   | PRIMARY / PRIMARY | 50M| 100.00 | Using where
+| 3. Keyset pagination using user_id as offset | 0.03 sec      | range   | PRIMARY / PRIMARY | 50M| 100.00 | Using where
 
 Let's focus on the key difference between execution plans for 2nd and 3rd solutions since the 1st one is not practically useful for large tables.
 
@@ -189,7 +189,7 @@ More guidance about understaing output for `EXPLAIN` command can be found in [th
 Summary
 ----
 
-The main topic for the blog post was related to scanning a large table with 100 000 000 records using `offset` with a primary key. Overall, 3 different approaches were reviewed and tested on the corresponding dataset. I recommend only one of them if you need to scan a mutable large table.
+The main topic for the blog post was related to scanning a large table with 100 000 000 records using `offset` with a primary key (keyset pagination). Overall, 3 different approaches were reviewed and tested on the corresponding dataset. I recommend only one of them if you need to scan a mutable large table.
 
 Also, we revised usage of `EXPLAIN EXTENDED` command to analyze execution plan of MySQL queries. I am sure that other RDBMS have analogs for the functionality.
 

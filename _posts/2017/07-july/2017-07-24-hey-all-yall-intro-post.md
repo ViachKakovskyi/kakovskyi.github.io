@@ -76,7 +76,7 @@ In the blog you can expect to read:
 The target audience for the blog is:
 - Backend software engineers
 - Software engineers interested in improving backend skills
-- Engineers which tend to lead small or mid-size teams
+- Engineers that tend to lead small or mid-size teams
 - Any person who interested in learning about Backend. Or burrito. Or BBQ.
 
 I plan to write at least a post per week and send monthly updates. Don't forget to **[subscribe](/about-me#subscribe){:target="_blank"}** to my mailing list.
