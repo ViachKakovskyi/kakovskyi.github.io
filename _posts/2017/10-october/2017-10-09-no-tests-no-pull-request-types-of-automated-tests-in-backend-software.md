@@ -143,7 +143,7 @@ class RetryTest(TestCase):
 ```
 {: .language-python}
 
-We use `Mock` object to introduce a function with the predefined behavior: raising  `DisconnectedError` two times and returning status code 200 that means successful HTTP-request. Thankfully to that, we do not have to perform the actual request to some web server and do all slow I/O work. Also, we do not need to perform some tweaks with configuring the server or load balancer to break the connection for each execution of the test.
+We use `Mock` object to introduce a function with the predefined behavior: raising  `DisconnectedError` two times and returning status code 200 that means successful HTTP-request. Thankfully, we do not have to perform the actual request to some web server and do all slow I/O work. Also, we do not need to perform some tweaks with configuring the server or load balancer to break the connection for each execution of the test.
 
 I encourage you to read about the `retry` function in my another blog post **[Never Give Up, Retry: How Software Should Deal with Failures](http://allyouneedisbackend.com/blog/2017/09/15/how-backend-software-should-retry-on-failures/){:target="_blank"}**. I found the technique very useful during making backend that depends on various other services.
 
