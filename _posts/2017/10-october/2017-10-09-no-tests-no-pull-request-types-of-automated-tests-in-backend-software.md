@@ -55,7 +55,7 @@ Software test is a thing that consumes the time that can be rationally used for 
 
 Unexperienced software developers often think that testing it's something that should be done exclusively by quality assurance team.  I tend to disagree. Good engineers own their shit.
 
-In a test, you call a function that is already written and or still does not exists (read more about **[Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development){:target="_blank"})**. You pass some parameters and expect the function to return a specific value. If the value is wrong, that means that the test failed and the code is broken. *Or the test is implemented poorly.*
+In a test, you call a function that is already written and or still does not exist (read more about **[Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development){:target="_blank"})**. You pass some parameters and expect the function to return a specific value. If the value is wrong, that means that the test failed and the code is broken. *Or the test is implemented poorly.*
 
 Some programming languages provide the ability to wrap tests into the documentation as Python does. It's called **[doctests](https://en.wikipedia.org/wiki/Doctest){:target="_blank"})**.
 ```
@@ -130,7 +130,9 @@ from utils import retry
 
 class RetryTest(TestCase):
     async def test_retry(self):
-        self._func = Mock(return_value=200, side_effect=[DisconnectedError, DisconnectedError, 200]
+        self._func = Mock(return_value=200,
+                          side_effect=[DisconnectedError,
+                                      DisconnectedError, 200]
 
         @retry(DisconnectedError)
         async def get_http_status():
