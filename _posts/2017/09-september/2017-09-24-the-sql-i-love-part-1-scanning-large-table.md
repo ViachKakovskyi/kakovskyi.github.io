@@ -159,7 +159,7 @@ LIMIT 10 000;
 ```
 {: .language-sql}
 
-> #### Wow, it is significantly faster than the previous approach. More than in 1000 times.
+> #### Wow, it is significantly faster than the previous approach. More than 1000 times.
 
 Note, that the values of `user_id` are not sequential and can have gaps like 25 348 is right after 25 345. The solution also works if any records from future pages are deleted - even in that case query does not skip records. Sweet, right?
 
@@ -182,7 +182,7 @@ Let's focus on the key difference between execution plans for 2nd and 3rd soluti
 * **Filtered**: `200.00` vs `100.00`. The column indicates estimated the percentage of the table to be filtered before processing. Having the higher value is better. The value of `100.00` means that the query looks thru the whole table. For the 2nd query, the value is not constant and depends on the page number: if we ask 1st page the value of filtered column would be `1000000.00`. For the very last page, it would be `100.00`.
 * **Extra**: `NULL` vs `Using where`. Provides additional information about how MySQL resolves the query. Usage of `WHERE` on `PRIMARY` key make the query execution faster.
 
-I suspect that **join type** is the parameter of the query that made the largest contribution to performance to make the 3rd query faster. Another important thing is that the 2nd query is extremely dependent on the number of the page to scroll. More deep pagination is slower in that case.
+I suspect that **join type** is the parameter of the query that made the largest contribution to performance to make the 3rd query faster. Another important thing is that the 2nd query is extremely dependent on the number of the pages to scroll. More deep pagination is slower in that case.
 
 More guidance about understaing output for `EXPLAIN` command can be found in [the official documentation for your RDBMS](https://dev.mysql.com/doc/refman/5.6/en/explain-output.html){:target="_blank"}.
 
