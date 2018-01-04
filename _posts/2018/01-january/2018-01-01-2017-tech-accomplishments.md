@@ -4,12 +4,13 @@ layout: post
 date: 2018-01-01
 location: Austin, Texas
 description: The year was fascinating, challenging, and with a lot of engineering opportunities. I'm looking back to retrospect my technical accomplishments as a part of Atlassian Stride team to energize and set new professional goals.
-tags: [leadership]
-og_image: /images/mygoalz-2017.png
+tags: [leadership, mygoalz]
+og_image: /images/stride-2017-medium.png
 keywords:
   - personal technology achievements
   - software engineering goals
   - growing with Atlassian Stride
+  - python backend software framework
 ---
 
 <div class="image-wrapper">
@@ -24,7 +25,7 @@ keywords:
   </amp-img>
 </div>
 
-Evaluating accomplishments motivates me and gives a breath of fresh air for the new ones. I believe that it's the essential exercise for goals setting.
+Evaluating accomplishments motivates me and gives a breath of fresh air for the new ones. I believe that it's an essential exercise for goals setting.
 
 I'm proud to be a part of [Atlassian Stride](http://stride.com){:target="_blank"} team in 2017. Working for the company accelerates professional growth gigantically.
 
