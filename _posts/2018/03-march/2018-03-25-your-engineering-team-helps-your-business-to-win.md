@@ -16,7 +16,7 @@ keywords:
 <div class="image-wrapper">
   <amp-img
       media="(min-width: 550px)"
-      src="{{ site.cdn.http }}/the-phoenix-project-small.png"
+      src="{{ site.cdn.http }}/images/the-phoenix-project-small.png"
       alt="Does Your Engineering Team Help Your Business To Win?"
       class="image-right"
       width="256"
