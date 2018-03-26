@@ -3,7 +3,7 @@ title: Does Your Engineering Team Help Your Business To Win?
 layout: post
 date: 2018-03-25
 location: Austin, Texas
-description: Thoughts, notes, and advice after reading "The Phoenix Project" book through the prism of my experience. Reading the blogpost, you will learn why I recommend reading the book. The post targets engineers that are managing commercial software projects or would like to start doing that.
+description: Thoughts, notes, and action items after reading "The Phoenix Project" book through the prism of my experience. Reading the blogpost, you will learn why I recommend reading the book. The post targets engineers that are managing commercial software projects or would like to start doing that.
 comments: true
 tags: [leadership, devops book club, reading notes]
 og_image: /images/the-phoenix-project-small.png
@@ -20,7 +20,7 @@ keywords:
       alt="Does Your Engineering Team Help Your Business To Win?"
       class="image-right"
       width="256"
-      height="320"
+      height="208"
       layout="fixed">
   </amp-img>
 </div>
