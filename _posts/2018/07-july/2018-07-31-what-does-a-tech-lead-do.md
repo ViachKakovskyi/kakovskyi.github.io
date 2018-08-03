@@ -3,7 +3,7 @@ title: What Does a Tech Lead Do?
 layout: post
 date: 2018-08-03
 location: Austin, Texas
-description: After 3 years of being in the role for different projects, I'm retrospecting all my recent experience leading backend software engineering teams.
+description: After 3.5 years of being in the role for different projects, I'm retrospecting all my recent experience leading backend software engineering teams.
 comments: true
 tags: [leadership]
 og_image: /images/tech-lead.png
