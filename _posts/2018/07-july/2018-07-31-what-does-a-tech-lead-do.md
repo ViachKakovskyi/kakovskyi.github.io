@@ -178,7 +178,7 @@ TL-starter pack
 ----
 
 If you're interested in a Tech Lead position and would like to prepare for that, he's the list of skills that I found valuable in the very beginning of the path:
-* **Practical proficiency in the programming languages **from your stack - to be able to make good technical choices and do the code review as well. Make the proper start of the project is crucial so your coding skills can help with that dramatically to define structure and basic components.
+* **Practical proficiency in the programming languages** from your stack - to be able to make good technical choices and do the code review as well. Make the proper start of the project is crucial so your coding skills can help with that dramatically to define structure and basic components.
 * **Good level of skills related to data stores** - I think that in the majority of projects you deal with information read or stored from somewhere. Also, the knowledge is a perfect ground for system design competence.
 * **Project management** - for organizing your work in the new multi-tasking environment as well as work of other people.
 * **Communication skills** - the position is about enabling other people to do technical work.
