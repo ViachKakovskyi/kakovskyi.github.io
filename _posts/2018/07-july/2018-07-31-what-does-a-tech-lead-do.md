@@ -1,5 +1,5 @@
 ---
-title: What Does a Tech Lead Do?
+title: What Does a Software Tech Lead Do?
 layout: post
 date: 2018-08-03
 location: Austin, Texas
