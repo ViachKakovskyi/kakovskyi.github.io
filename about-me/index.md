@@ -17,11 +17,11 @@ keywords:
 
 <amp-img
     media="(min-width: 600px)"
-    src="{{ site.cdn.http }}/photos/viach-bitbucket.jpg"
+    src="{{ site.cdn.http }}/images/jira-caffeine-small.jpg"
     alt="viach-bitbucket"
     class="image-right"
-    width="480"
-    height="600"
+    width="287"
+    height="431"
     layout="responsive">
 </amp-img>
 
@@ -34,9 +34,9 @@ Today Python is the primary programming language for me. I also have a bit of co
 
 <amp-img
     media="(max-width: 599px)"
-    src="{{ site.cdn.http }}/photos/bitbucket-w.png"
-    width="1080"
-    height="789"
+    src="{{ site.cdn.http }}/images/jira-caffeine-2-responsive.png"
+    width="716"
+    height="754"
     layout="responsive">
 </amp-img>
 
