@@ -33,7 +33,7 @@ keywords:
 I do not think that the definition is correct, but it's a good way of thinking about that. In the post, I  retrospect 3.5 years of my experience in the position that includes:
 
 * leading one of the teams for **[Atlassian Stride](https://www.stride.com/){:target="_blank"}** - complete team communication solution. Within almost 2 years the team had from 5 to 10 engineers.
-* leading **KPIdata** a non-profit organization that developed software for accessing the quality of higher education in [Kyiv Polytechnic Institute](https://en.wikipedia.org/wiki/Igor_Sikorsky_Kyiv_Polytechnic_Institute){:target="_blank"}.  The team was expanded to 10 core members (only 3 software engineers including myself) and eventually, 180+ individual contributors helped us to deliver the project.
+* leading **KPIdata** - a non-profit organization that developed software for accessing the quality of higher education in [Kyiv Polytechnic Institute](https://en.wikipedia.org/wiki/Igor_Sikorsky_Kyiv_Polytechnic_Institute){:target="_blank"}.  The team was expanded to 10 core members (only 3 software engineers including myself) and eventually, 180+ individual contributors helped us to deliver the project.
 * leading a team of 4 engineers (including myself) at **[Video Internet Technologies Ltd](https://www.linkedin.com/company/vit-ltd/){:target="_blank"}** for Integration of Video Management Systems (CCTV).
 
 Note, that the same positions might have different responsibilities in different companies. 
@@ -62,7 +62,7 @@ The space for the engineering creativity
 
 **Yes, you can do anything to achieve the engineering goals.** Here's the list of the things that I was able to change or implement. Note, that you should get buy-in from your team to make the changes persistent. People make software. Happy people make working software. 
 
-* **Software development methodology**. Hardly depends on the goals of the project and deadlines. Answer the questions to define that:
+* **Software development methodology**. Strongly depends on the goals of the project and deadlines. Answer the questions to define that:
   * How many days are in an iteration?
   * What's the planning process? Which tasks should be estimated? How to estimate tasks?
   * Should we accept changes in requirements or not between iterations?
@@ -82,8 +82,8 @@ The space for the engineering creativity
   * Another example - you can target to make your teammates as autonomous as possible (a good idea when Y'all geographically distributed) - then you need to spend more time for planning to define independent work streams. 
 * **Service Level Indicators**. As a Tech Lead, you're in charge of defining when your software provides the needed quality of service. Picking the right set of the indicators that reflect the reality of your business is vital because it sets the target for your team as well as the direction for engineering improvements. Examples from my experience:
   * **Availability.** Can the service be used?
-  * **Number of processed jobs.** Do we still need the service?Hhow much useful work we're doing?
-  * **Success rates for the principal components.** -Helps us to see problems on the middle level.
+  * **Number of processed jobs.** Do we still need the service?How much useful work we're doing?
+  * **Success rates for the principal components.** - helps us to see problems on the middle level.
 * **Rollout schedule**. It includes how often to deploy the software to different environments. 
   * As soon as a pull request is merged
   * OR do releases once per 4 months.
@@ -95,7 +95,7 @@ The space for the engineering creativity
   * Everybody can take any task regardless priority and dependencies
 * **Code review policy**. Who should approve a pull request to let the creator merge it to master? Options:
   * Consensus - all concerns are answered and all default reviewers approved the changes
-  * At least 2 approvals from Senior engineers should received to proceed
+  * At least 2 approvals from Senior engineers should be received to proceed
   * I can approve my PR and deploy after 2 hours after the last commit
 * **Retrospectives.** How often to do them? My recommendation is once per 4 weeks, but I know that some teams do it every 2 weeks. Btw, how often do you do them?
 
@@ -114,14 +114,14 @@ Before I became a Tech Lead on the latest team, I was working more than 1.5 year
 To make your project successful first of all you should **read** a lot of: 
 * Code
   * Pull requests made by your team.
-  * Solutions that your systems reuse.
+  * The solutions that your systems reuse.
   * Code of third-party services maintained by other teams that you need work with.
 * Technical documentation
   * Description of the services that you can re-use (both in-house and third-party ones).
   * Implementation details of the solutions.
   * Known issues for them (nothing is perfect) - to understand risks and plan mitigation for them.
 
-After the lots reading you **write** a bit:
+After a lot of reading you **write** a bit:
 
 * Engineering proposals - [DACI](https://www.atlassian.com/team-playbook/plays/daci) is a useful framework. I love it.
 * After the proposals are decided - design pages.
@@ -185,7 +185,7 @@ If you're interested in a Tech Lead position and would like to prepare for that,
 
 I believe that these 4 skills are enough and the rest of the skills can be built during the project on top of them. I hope that the blog post will help to improve technical leadership in software teams.
 
-**P.S.** In the blog, when I say "you do something" means "you're responsible for something." As a Tech Lead you can delegate some complex engineering to the experts on your team but be able to verify, approve or correct the solutions. Also, being a decision-maker does not equal to being a dictator andignoring the voices of other people.   
+**P.S.** In the blog, when I say "you do something" means "you're responsible for something." As a Tech Lead you can delegate some complex engineering to the experts on your team but be able to verify, approve or correct the solutions. Also, being a decision-maker does not equal to being a dictator and ignoring the voices of other people.   
 
 **P.P.S.** From my perspective, the difference between **Team Lead and Tech Lead** is in responsibilities:
 * Team Lead is responsible for people, not project.

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e054b579-470a-4e88-95f0-c74dd74844c1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2018/07-july/2018-07-31-what-does-a-tech-lead-do.md" afterPath="$PROJECT_DIR$/_posts/2018/07-july/2018-07-31-what-does-a-tech-lead-do.md" />
-    </list>
+    <list default="true" id="e054b579-470a-4e88-95f0-c74dd74844c1" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -629,12 +627,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1533329633465</updated>
-      <workItem from="1533329635104" duration="146000" />
+      <workItem from="1533329635104" duration="440000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146000" />
+    <option name="totallyTimeSpent" value="440000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
