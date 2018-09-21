@@ -49,30 +49,30 @@ You write some code, push it to production, and hope that everything works fine.
 This tactic is OK for the cases when it's not a big deal if your service does not operate properly:
 * Pet projects
 * Students' projects
-* Hackathons (I've never had proper monitoring during a hackathon, had you?) 
+* Hackathons (I've never had proper monitoring during a hackathon, have you?) 
 * Prototypes/demo projects
 
 But I used to work in the environment when business-related applications do not have any telemetry. 
 > #### My boss called me at 11 PM to tell that the piece of ~~sh*t~~ fantastic software is not working, and the next morning we're demoing the system for the customer that should pay for that. 
 
-Trust me; it's not funny at all. After such calls, you connect to the box that runs the software via SSH. You try to understand what's going on. In Software Firefighting mode you try to reproduce the issue in production to see in logs something useful. Another option if your logs are not very verbose or you want to jump into lower level - attach a debugger to a running process. 
+Trust me; it's not funny at all. After such calls, you connect to the box that runs the software via SSH. You try to understand what's going on. In Software Firefighting mode you try to reproduce the issue in production to see something useful in logs. Another option if your logs are not very verbose or you want to jump into lower level - attach a debugger to a running process. 
 
 If you stick with the Software Firefighting approach for running production software, I see a high probability for you to be working late at night. Very late at night... Might be OK for the fans of nightly coding. Not sure if you be paid for the overtime though.
 
 > #### The vendor from another continent dialed me. They asked to expedite issues with our software that are happening right away during the exhibition. It happened to me at 3 AM. The exciting experience that I would like to avoid in the future.
 
-When you find the cause - you experiment on the live instance try to patch the code, eventually create a PR that starts with the word `hotfix` and deploy this straight to production without proper peer reviews. Your team will learn later about that... hopefully not from a new incident.
+When you find the cause - you experiment on the live instance try to patch the code, eventually create a PR that starts with the word `hotfix` and deploy this straight to production without proper peer reviews. Your team will learn about that later... hopefully not from a new incident.
 
 Ultimate Software Firefighting workflow
 ---
 
-Well, I warned you that it's not suitable for business applications. Now I will share my thoughts how to do it.
+Well, I warned you that it's not suitable for business applications. Now I will share my thoughts on how to do it.
 1. Identify the problem.
   * Connect to the production environment.
   * Collect live stats (in the next section will discuss how to get trained in that area).
 2. Reproduce the problem.
-  * Localize - find the place where it's happening. The smaller is the localized area - the better is it for you: service, module, class, method, code statement, variable...
-  * Repeat the harmful action to verify if that the right place (only if that's safe from the business perspective).
+  * Localize - find the place where it's happening. The smaller is the localized area - the better it is for you: service, module, class, method, code statement, variable...
+  * Repeat the harmful action to verify if that is the right place (only if that's safe from the business perspective).
 3. Prepare the hotfix.
    * Find similar problems in your incidents registry/closed Jira tickets or on Stack Overflow.
    * Make the change locally.
@@ -86,23 +86,23 @@ Train the firefighters
 Troubleshooting in production is a great skill. I wish I had it on the higher level then it's now (but I do not want any business to pay for that). Here're the levels of troubleshooting, ordered from the easiest to more complex things:
 
 1. **Check the state of the box that is running the application (healthy or not)**.
-   * **[top](https://linux.die.net/man/1/top)**{:target="_blank"} - the command collects resource usage statistics on your machine and provides the dynamic view the utilization. That's the easiest thing that you can do to gain some situational awareness. Links for learning:
+   * **[top](https://linux.die.net/man/1/top)**{:target="_blank"} - the command collects resource usage statistics on your machine and provides the dynamic view on the resources utilization. That's the easiest thing that you can do to gain some situational awareness. Links for learning:
      * [Linux Load Averages: Solving the Mystery](http://www.brendangregg.com/blog/2017-08-08/linux-load-averages.html){:target="_blank"}
      * [Understanding the output of TOP command](https://gtacknowledge.extremenetworks.com/articles/How_To/Understanding-the-output-of-the-TOP-command){:target="_blank"}
      * [15 Practical Linux Top Command Examples](https://www.thegeekstuff.com/2010/01/15-practical-unix-linux-top-command-examples/){:target="_blank"}
 
-2. **Check the statements that the software is logging**. The logs for your service, web server, load balancer - all the things. `grep` and `tail` are your best friends that here.
+2. **Check the statements that the software is logging**. The logs for your service, web server, load balancer - all the things. `grep` and `tail` are your best friends there.
 
-3. **Investigate the suspicious running process(es) without restarting.** Since it's not always straightforward how to reproduce bugs in production, I was thrilled when I learned that we could connect to the code that already serves our customers. It gives the ability to have a much way deeper look into details. Some tools that can give you a clue:
+3. **Investigate the suspicious running process(es) without restarting.** Since it's not always straightforward how to reproduce bugs in production, I was thrilled when I learned that we could connect to the code that already serves our customers. It gives the ability to have a way deeper look into details. Some tools that can give you a clue:
 
-   - **[gdb](https://www.gnu.org/software/gdb/)** - is the GNU debugger that allows you to set breakpoints and temporarily stop the execution of a process to see values of variables in real time. The more you understand source code of the program the easier it would find the error. When you need to investigate a crash you can set a breakpoint just before the program crashes. Some tips:
+   - **[gdb](https://www.gnu.org/software/gdb/)** - is the GNU debugger that allows you to set breakpoints and temporarily stop the execution of a process to see values of variables in real time. The more you understand source code of the program the easier it would be to find the error. When you need to investigate a crash you can set a breakpoint just before the program crashes. Some tips:
 
      - You can [see waiting threads using gdb](https://benbernardblog.com/my-startling-encounter-with-python-debuggers/){:target="_blank"} 
      - You can [extend gdb using Python](https://sourceware.org/gdb/onlinedocs/gdb/Python.html){:target="_blank"} (you can also go that with GoLang AFAIK)
 
    > #### The tool helped me to figure out an issue with regular expressions that caused a major incident in a large cloud system.
 
-   **gdb** gives you more insights that you have looking only in logs. You can find many blogs on how to use the debugger for your technology stack. I'd like to share the link to blog post about [Debugging of CPython processes with gdb](http://podoliaka.org/2016/04/10/debugging-cpython-gdb/){:target="_blank"} by [Roman Podoliaka](https://twitter.com/rpodoliaka). For the backend applications written in Python I can be more convenient to use [pdb]( https://docs.python.org/3/library/pdb.html){:target="_blank"}. Here's [the great tutorial](https://github.com/spiside/pdb-tutorial){:target="_blank"} how to start using the tooling. 
+   **gdb** gives you more insights that you have looking only in logs. You can find many blogs on how to use the debugger for your technology stack. I'd like to share the link to blog post about [Debugging of CPython processes with gdb](http://podoliaka.org/2016/04/10/debugging-cpython-gdb/){:target="_blank"} by [Roman Podoliaka](https://twitter.com/rpodoliaka). For the backend applications written in Python it can be more convenient to use [pdb]( https://docs.python.org/3/library/pdb.html){:target="_blank"}. Here's [the great tutorial](https://github.com/spiside/pdb-tutorial){:target="_blank"} how to start using the tooling. 
 
 4. **Trace all the things on the box (network traffic, library calls, system calls)**. If nothing of above helps - look into the universe of tools and approaches for introspecting your software. Check out the links for learning:
 
@@ -134,7 +134,7 @@ Let's analyze the benefits of the cowboy style of running production software.
 * **Affects the reputation of your business.**  You're aware only when customers/business owners find that service does not work. Example: you learn from Twitter feed that your service does not work for end-users and they're moving to a competitor. It sucks.
 * **Requires engineering team to be trained.** 
 * **Time-consuming.** You need to reproduce the issue in prod to gather telemetry right on the box.
-* **Not accountable.** Leads to running hotfixes in production that might not exist in your repository. And the other engineers on your team might learn nothing how to fix such issues.
+* **Not accountable.** Leads to running hotfixes in production that might not exist in your repository. And the other engineers on your team might learn nothing on how to fix such issues.
 * **Stressful.** Dangerous to your mental and physical health. As well as your personal life.
 * **Non-cooperative.** It's hard to handover work if you need to step-out.
 
