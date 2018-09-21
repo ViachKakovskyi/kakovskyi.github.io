@@ -74,11 +74,11 @@ Well, I warned you that it's not suitable for business applications. Now I will 
   * Localize - find the place where it's happening. The smaller is the localized area - the better is it for you: service, module, class, method, code statement, variable...
   * Repeat the harmful action to verify if that the right place (only if that's safe from the business perspective).
 3. Prepare the hotfix.
-   1. Find similar problems in your incidents registry/closed Jira tickets or on Stack Overflow.
-   2. Make the change locally.
-   3. Test it without touching production.
-   4. If you're sure about the change - move it to production.
-   5. Verify that the problem is solved (and the new issues were not created).
+   * Find similar problems in your incidents registry/closed Jira tickets or on Stack Overflow.
+   * Make the change locally.
+   * Test it without touching production.
+   * If you're sure about the change - move it to production.
+   * Verify that the problem is solved (and the new issues were not created).
 4. Write a blog for your team to share your learnings from the firefighting session.
 
 Train the firefighters
