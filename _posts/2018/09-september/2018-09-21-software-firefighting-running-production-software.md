@@ -3,6 +3,7 @@ title: "Running Production Systems: Level 1, Software Firefighting"
 layout: post
 date: 2018-09-21
 location: Austin, Texas
+comments: true
 description: You Build It, You Run It. The slogan spreads all around the world across software engineering teams. There are different levels of operational maturity, and I encourage you to find the one that fits your team. This week we review Level 1 - Software Firefighting.
 tags: [harmful advice, development process, reliability]
 og_image: /images/this-is-fine.jpg
